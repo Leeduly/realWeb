@@ -1,0 +1,257 @@
+/*
+=============================================
+
+---- created by Fkazemi5236@gmil.com
+---- date created 05 - 06 - 2018
+---- if you have any question about this item, sent email to this address :)
+
+
+==============================================
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900);
+/*
+-----------------
+Normalizing
+-----------------
+*/
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+html, body {
+    height: 100vh;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+	/* background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%); */
+    /* background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%); */
+    background-image: radial-gradient(circle, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+    
+	
+}
+
+/* side menubar */
+nav {
+    overflow: hidden;
+    position: relative;
+    transform: translateX(-200px);
+    height: 100%;
+    width: 300px;
+    transition: all 800ms cubic-bezier(.8, 0, .33, 1);
+    border-radius: 0% 0% 100% 50%;
+}
+/* javaScript에 사용될 css  */
+nav.nav-open {
+    transform: translateX(0px);
+    border-radius: 0% 0% 0% 0%;
+	 background: rgba(255, 255, 255, 0.4);
+}
+
+/* ham- position */
+nav .menu-btn {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    padding: 0;
+    width: 30px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+nav .menu-btn .line {
+    padding: 0;
+    width: 30px;
+    background: #1e3c72;
+    height: 2px;
+    margin: 5px 0;
+    transition: all 700ms cubic-bezier(.9, 0, .33, 1);
+}
+
+nav .menu-btn .line.line--1 {
+    width: 30px;
+    transform: rotate(0) translateY(0);
+}
+
+nav .menu-btn .line.line--1.line-cross {
+    width: 30px;
+    transform: rotate(45deg) translateY(10px);
+	 background: rgba(0,0,0,0.6);
+}
+
+nav .menu-btn .line.line--2 {
+    width: 28px;
+    transform: translateX(0);
+}
+
+nav .menu-btn .line.line--2.line-fade-out {
+    width: 28px;
+    transform: translate(30px);
+    opacity: 0;
+}
+
+nav .menu-btn .line.line--3 {
+    width: 20px;
+    transform: rotate(0) translateY(0);
+}
+
+nav .menu-btn .line.line--3.line-cross {
+    width: 30px;
+    transform: rotate(-45deg) translateY(-10px);
+	 background: rgba(0,0,0,0.6);
+}
+
+/* Sub menu  */
+nav .nav-links {
+    position: absolute;
+    left: 0;
+    top: 150px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: all 900ms cubic-bezier(.9, 0, .33, 1);
+}
+
+nav .nav-links.fade-in {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+nav .nav-links .link {
+    margin: 20px 0;
+    text-decoration: none;
+    font-family: sans-serif;
+    color: rgba(0,0,0,0.9);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    transition: all 300ms cubic-bezier(.9, 0, .33, 1);
+}
+
+nav .nav-links .link:hover {
+    color: rgba(0, 0, 0, .5);
+}
+
+
+.inform{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 2rem;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	text-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+.support{
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	padding: 10px;
+	display: flex;
+}
+a{
+    color: rgba(255, 0, 255, 0.8);
+	/* margin: 0 20px; */
+    padding: 15px 25px;
+	font-size: 2rem;
+	transition: all 400ms ease;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* a:hover{
+	color: #222;
+    
+} */
+
+/*
+---------------------------------------
+hover effect 34
+---------------------------------------
+*/
+
+a:hover, a:focus {
+    outline: none;
+  }
+  
+a:before, a span:before, a:after, a span:after {
+    content: "";
+    position: absolute;
+  }
+  
+a:before, a span:before {
+    top: -webkit-calc(50% - .3em);
+    top: calc(50% - .3em);
+    left: -.25em;
+    width: .5em;
+    height: .5em;
+    opacity: 0;
+    -webkit-transform: translate3d(-.6em, 0, 0) rotate(45deg);
+    transform: translate3d(-.6em, 0, 0) rotate(45deg)
+  }
+  
+ a:after, a span:after {
+    bottom: -webkit-calc(50% - .35em);
+    bottom: calc(50% - .35em);
+    right: -.25em;
+    width: .5em;
+    height: .5em;
+    opacity: 0;
+    -webkit-transform: translate3d(.6em, 0, 0) rotate(45deg);
+    transform: translate3d(.6em, 0, 0) rotate(45deg)
+  }
+  
+a:before, a:after {
+    -webkit-transition: -webkit-transform .3s ease-out, opacity .3s;
+    transition: transform .3s ease-out, opacity .3s
+  }
+  
+a span:before, a span:after {
+    -webkit-transition: -webkit-transform .3s ease-out .15s, opacity 0s .05s;
+    transition: transform .3s ease-out .15s, opacity 0s .05s
+  }
+  
+a:hover {
+    overflow: visible
+  }
+  
+a:hover:before, a:hover span:before {
+    -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+    transform: translate3d(0, 0, 0) rotate(45deg);
+    opacity: 1
+  }
+  
+a:hover:after, a:hover span:after {
+    -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+    transform: translate3d(0, 0, 0) rotate(45deg);
+    opacity: 1
+  }
+  
+ a:before, a span:before {
+    border-right: .15em solid rgba(0, 255, 255, 0.4);
+    border-top: .15em solid rgba(0, 255, 255, 0.4);
+  }
+  
+a:after, a span:after {
+    border-left: .15em solid rgba(0, 255, 255, 0.4);
+    border-bottom: .15em solid rgba(0, 255, 255, 0.4);
+  }

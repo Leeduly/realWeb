@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>project</title>
+  <!-- nav bar -->
+  <script type="text/javascript" src="/DataBasePage/dataPage.js"></script>
+  <!-- jquery & bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css">
+  <link rel="stylesheet" href="/DataBasePage/dataPageLayout.css">
+  <link rel="stylesheet" href="/DataBasePage/project/projectMain.css">
+</head>
+
+<body>
+  <nav>
+    <div class="menu-btn">
+      <div class="line line--1"></div>
+      <div class="line line--2"></div>
+      <div class="line line--3"></div>
+    </div>
+    <div class="nav-links menu">
+      <a href="/DataBasePage/project/projectMain.html" class="link"><span>project<br>search & add</span></a>
+      <a href="/DataBasePage/project/experiment/expMain.html" class="link"><span>experiment<br> search & add</span></a>
+      <a href="/DataBasePage/project/experiment/data/search.html" class="link"><span>Graph & Info</span></a>
+    </div>
+  </nav>
+  <div class="inform">
+    DataBase Main project menu
+  </div>
+  <div class="tableBox">
+    <div id="toolbar">
+      <select class="form-control">
+        <option value="">선택하세요</option>
+        <option value="all">Export All</option>
+        <option value="selected">Export Selected</option>
+      </select>
+    </div>
+    <table id="table" data-show-header="true" data-pagination="true" 
+    data-toggle="table" data-toolbar="#toolbar" data-height="400" data-search="true"
+    data-show-export="true" data-click-to-select="true"
+    data-page-list="[5, 10, 25, 50, 100, ALL]" data-page-size="5"
+    data-url="https://examples.wenzhixin.net.cn/examples/bootstrap_table/data">
+    <thead>
+      <tr>
+        <th data-field="state" data-checkbox="true"></th>
+        <th data-field="id" data-sortable="true">ID</th>
+        <th data-field="name" data-sortable="true">Item Name</th>
+        <th data-field="price" data-sortable="true">Item Price</th>
+        <th data-field="note" data-sortable="true">Note</th>
+      </tr>
+    </thead>
+  </table>
+</div>
+
+  <!--jquery가 javascript보다 먼저 위치해야됨. -->
+  <script src="	https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- 뭔지 모르겠다 -->
+  <script src="	https://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
+  <script
+    src="	https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/editable/bootstrap-table-editable.js"></script>
+  <script src="	https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+  <!-- bootstrap 테이블 디자인 만들어주는 놈.  -->
+  <script src="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.js"></script>
+
+  <!-- export 내보내기 기능 json, 등등 -->
+  <script
+    src="	https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.17.1/extensions/export/bootstrap-table-export.js"></script>
+  <script type="text/javascript"
+    src="/tableExport.jquery.plugin-master/tableExport.jquery.plugin-master/libs/FileSaver/FileSaver.min.js"></script>
+
+  <!-- filter 부분(검색창) cdn -->
+  <!-- <script src="	https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js"></script> -->
+  <script>
+    var $table = $('#table')
+    var $button = $('#button')
+
+    $(function () {
+      $button.click(function () {
+        alert(JSON.stringify($table.bootstrapTable('getData')))
+      })
+    })
+    $(function () {
+      $('#toolbar').find('select').change(function () {
+        $table.bootstrapTable('refreshOptions', {
+          exportDataType: $(this).val()
+        });
+      });
+    })
+  </script>
+</body>
+
+</html>
