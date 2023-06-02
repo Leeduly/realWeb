@@ -31,30 +31,37 @@
   <div class="inform">
     DataBase Main project menu
   </div>
-  <div class="tableBox">
-    <div id="toolbar">
-      <select class="form-control">
-        <option value="">선택하세요</option>
-        <option value="all">Export All</option>
-        <option value="selected">Export Selected</option>
-      </select>
+  <div class="pageBox">
+    <div class="addBox">
+      <div class="addBox_sub">
+        <button class="addBtn" href="#">Project 추가</button>
+      </div>
     </div>
-    <table id="table" data-show-header="true" data-pagination="true" 
-    data-toggle="table" data-toolbar="#toolbar" data-height="400" data-search="true"
-    data-show-export="true" data-click-to-select="true"
-    data-page-list="[5, 10, 25, 50, 100, ALL]" data-page-size="5"
-    data-url="https://examples.wenzhixin.net.cn/examples/bootstrap_table/data">
-    <thead>
-      <tr>
-        <th data-field="state" data-checkbox="true"></th>
-        <th data-field="id" data-sortable="true">ID</th>
-        <th data-field="name" data-sortable="true">Item Name</th>
-        <th data-field="price" data-sortable="true">Item Price</th>
-        <th data-field="note" data-sortable="true">Note</th>
-      </tr>
-    </thead>
-  </table>
-</div>
+    <div class="tableBox">
+      <div id="toolbar">
+        <select class="form-control">
+          <option value="">선택하세요</option>
+          <option value="all">Export All</option>
+          <option value="selected">Export Selected</option>
+        </select>
+      </div>
+      <table id="table" data-show-header="true" data-pagination="true" 
+      data-toggle="table" data-toolbar="#toolbar" data-height="50%" data-search="true"
+      data-show-export="true" data-click-to-select="true"
+      data-page-list="[5, 10, 25, 50, 100, ALL]" data-page-size="10"
+      data-url="https://examples.wenzhixin.net.cn/examples/bootstrap_table/data">
+      <thead>
+        <tr>
+          <th data-field="state" data-checkbox="true"></th>
+          <th data-field="id" data-sortable="true">Project ID</th>
+          <th data-field="name" data-sortable="true">Project Name</th>
+          <th data-field="price" data-sortable="true">Date</th>
+          <th data-field="note" data-sortable="true">Note</th>
+        </tr>
+      </thead>
+      </table>
+    </div>
+  </div>
 
   <!--jquery가 javascript보다 먼저 위치해야됨. -->
   <script src="	https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
