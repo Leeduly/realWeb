@@ -39,7 +39,7 @@ html, body {
 }
 .addBox_sub button {
     width: 120px;
-    background-color: rgba(255, 255, 255, 0.50);
+    background-color: #FFF;
     border-radius: 3px;
     border: 1px solid #CCC
 }
