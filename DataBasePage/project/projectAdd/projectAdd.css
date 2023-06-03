@@ -1,0 +1,168 @@
+/* -------------------------------------------------------- */
+/* Copyright (c) 2023 by Soufiane Khalfaoui HaSsani (https://codepen.io/soufiane-khalfaoui-hassani/pen/LYpPWda) */
+/* -------------------------------------------------------- */
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background-image: radial-gradient(circle, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+    /* background: linear-gradient(#141e30, #243b55); */
+}
+
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.6);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+.login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+  /*input 태그 위치를 위해 만든 flex */
+.seperate {
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content: space-around;
+}
+
+.login-box .user-box {
+    position: relative;
+}
+
+.login-box .user-box input {
+    width: 300px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+/* textara 속성으로 note 구성해야도미 .  */
+.login-box .user-box .long {
+    width: 100%;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.login-box .long, .long label{
+    position: relative;
+    margin-left: 15px;
+    margin-right: 40px;
+}
+
+.login-box .user-box .hide {
+    width: 300px;
+    padding: 10px 0;
+    font-size: 16px;
+    color:none;
+    margin-bottom: 30px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+/* label 관련  */
+.login-box .user-box label {
+    position: absolute;
+    top:-20px;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label, 
+.login-box .user-box input:valid ~ label,
+.login-box .user-box textarea:focus ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+}
+
+textarea {
+    font-size: 1.5em;
+    width: 100%;
+    height: 400px;
+    padding: 10px;
+    margin-left: 15px;
+    margin-top: 20px;
+    border: 1px solid #CCC;
+}
+/* -------------------------------------- */
+.login-box form a, .login-box form button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+}
+/* button 속성이 기본적으로 가진 속성 제거를 위해 추가한 부분.  */
+.login-box form button {
+    border: none;
+    background-color: rgb(96, 93, 96);
+}
+
+.login-box a:hover, .login-box button:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+}
+
+.login-box a span, .login-box button span {
+    position: absolute;
+    display: block;
+}
+
+
+  /*sub, sign button의 위치를 위해 만든 flex */
+.sub_sign_btn {
+    display:flex;
+    justify-content:space-around;
+}
